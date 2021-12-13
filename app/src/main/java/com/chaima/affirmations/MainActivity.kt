@@ -3,7 +3,8 @@ package com.chaima.affirmations
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
-
+import com.chaima.affirmations.adapter.ItemAdapter
+import com.chaima.affirmations.data.Datasource
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -11,7 +12,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         // Initialize data.
-        val myDataset = Datasourse().loadAffirmations()
+        val myDataset = Datasource().loadAffirmations()
 
         val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
         recyclerView.adapter = ItemAdapter(this, myDataset)
